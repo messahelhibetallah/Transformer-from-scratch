@@ -220,7 +220,7 @@ def transformer_encoder(
     """
     Stack of encoder blocks applied sequentially.
 
-    Each block receives the *output* of the previous block — not the original
+    Each block receives the *output* of the previous block  not the original
     input X. The original code passed X every iteration, so the blocks did
     not chain and only the last block's transformation was used.
 
@@ -260,7 +260,7 @@ def classify(
         b_out:          scalar bias
 
     Returns:
-        probability (float) — > 0.5 → Spam, ≤ 0.5 → Ham
+        probability (float) -> 0.5 → Spam, ≤ 0.5 → Ham
     """
     pooled = np.mean(encoder_output, axis=0)        # (d_model,)
     logit  = np.dot(pooled, W_out) + b_out
@@ -329,7 +329,7 @@ def indices_to_embedding(
 
 def main() -> None:
     print("=" * 60)
-    print("Transformer Encoder — spam classifier demo")
+    print("Transformer Encoder, spam classifier demo")
     print("=" * 60)
 
     # Hyper-parameters
@@ -380,7 +380,7 @@ def main() -> None:
         print(f"  [{label:4s}  {score:.3f}]  {msg}")
 
     print()
-    print("Note: weights are random — no training has been done.")
+    print("Note: weights are random no training has been done.")
     print("This demo validates the pipeline shape, not accuracy.")
 
 
